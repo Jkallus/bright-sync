@@ -1,0 +1,16 @@
+[Unit]
+Description=display brightness sync service
+After=network.target
+
+[Service]
+User=root
+
+# The path to the executable, which is your Python interpreter
+# and your script, with any necessary arguments
+ExecStart=/home/jkallus/bright-sync/venv/bin/python /home/jkallus/bright-sync/sync.py
+
+# Restart the service on failure
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
